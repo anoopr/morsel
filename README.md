@@ -11,6 +11,7 @@ Problem
 There is no dependency management system for Cocoa development.  Everytime I want to use a new library, my options are:
 
 1) Clone the repository. Figure out which files I need. Copy them into my source tree.
+
 2) Add a git submodule.
 
 Both options are annoying in their own way. Inspired by [bundler](http://gembundler.com/) and [homebrew](http://mxcl.github.com/homebrew/), I present `morsel`.
@@ -50,9 +51,11 @@ That's it!
 What's Next
 -----------
 
-Well, it's annoying to have to define the url and files for each morsel.  An ideal `Morselfile` would look something like this:
+First, the whole thing is half-baked, so fleshing it out a bit will be nice.
+
+Then, it's annoying to have to define the url and files for each morsel.  An ideal `Morselfile` would look something like this:
 
     morsel 'jsonkit', :sha => 'c9ffd8f823e68df96fa2f87185bee861984ef637'
     morsel 'asihttprequest', :tag => 'v1.8'
 
-That'll require some [homebrew](http://mxcl.github.com/homebrew/)-style package management. Stay tuned.
+That'll require some [homebrew](http://mxcl.github.com/homebrew/)-style package management.
