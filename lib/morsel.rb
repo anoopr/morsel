@@ -1,0 +1,7 @@
+require 'morsel/base'
+require 'morsel/version'
+require 'morsel/runner'
+require 'morsel/dsl'
+require 'morsel/commands'
+require 'morsel/recipe'
+require 'morsel/installer'

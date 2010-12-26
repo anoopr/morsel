@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'morsel'
+Morsel::Runner.execute(*ARGV)
