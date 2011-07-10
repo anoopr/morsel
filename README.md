@@ -36,6 +36,17 @@ Create a `Morselfile` in your project's root that looks something like this:
         }
     end
 
+You can optionally set a branch if you do not want the default:
+
+    morsel 'jsonkit' do |m|
+        m.url = 'https://github.com/johnezang/JSONKit.git'
+        m.branch = 'experimental'
+        m.files = %w{
+            JSONKit.h
+            JSONKit.m
+        }
+    end
+
 Then run `morsel install`.  It'll clone the repos into `~/.morsel/repos` and then copy your desired files into a `morsels` directory in your project's root:
 
     $ find .
