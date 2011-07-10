@@ -8,7 +8,8 @@ module Morsel
       repo_dir = File.join(File.expand_path('~'), '.morsel', 'repos')
       FileUtils.mkdir_p(repo_dir) unless File.exists? repo_dir
       g = File.exists?(File.join(repo_dir, recipe.name)) ? Git.open(File.join(repo_dir, recipe.name)) : Git.clone(recipe.url, recipe.name, :path => repo_dir)
-      g.pull
+      g.fetch
+      g.branch(recipe.branch ? recipe.branch : 'HEAD').checkout
       recipe.files.each do |f|
         dirname = File.join('morsels', recipe.name, File.dirname(f))
         FileUtils.mkdir_p(dirname)
